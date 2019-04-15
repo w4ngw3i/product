@@ -1,6 +1,6 @@
 package com.wangwei.product.repository;
 
-import com.wangwei.product.common.ProductInfoOutput;
+
 import com.wangwei.product.dataObject.ProductInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -14,5 +14,5 @@ public interface ProductInfoReopsitory extends JpaRepository<ProductInfo, String
 
     List<ProductInfo> findByProductStatus(Integer productStatus);
 
-    List<ProductInfoOutput> findByProductIdIn(List<String> productId);
+    List<ProductInfo> findByProductIdIn(List<String> productId);
 }

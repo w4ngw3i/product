@@ -4,6 +4,7 @@ import com.wangwei.product.common.DecreaseStockInput;
 import com.wangwei.product.common.ProductInfoOutput;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -21,5 +22,8 @@ public interface ProductClient {
 
     @PostMapping("/product/decreaseStock")
     void decreaseStock(@RequestBody List<DecreaseStockInput> decreaseStockInputList);
+
+    @GetMapping("/msg")
+    String getProductMsg();
 
 }

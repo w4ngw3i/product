@@ -40,8 +40,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductInfoOutput> findList(List<String> productId) {
-        return productInfoReopsitory.findByProductIdIn(productId);
+    public List<ProductInfoOutput> findList(List<String> productIdList) {
+        return productInfoReopsitory.findByProductIdIn(productIdList).stream()
+                .map(e -> {
+                    ProductInfoOutput output = new ProductInfoOutput();
+                    BeanUtils.copyProperties(e, output);
+                    return output;
+                })
+                .collect(Collectors.toList());
     }
 
 

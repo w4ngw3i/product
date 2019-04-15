@@ -16,6 +16,6 @@ import static org.junit.Assert.*;
 public class ProductApplicationTest {
 
     @Test
-    public void main() {
+    public void contextLoads() {
     }
 }
